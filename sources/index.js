@@ -91,6 +91,25 @@ switch (entrega.tipo){
 
 var valorFinal = valorBebida + valorBorda + valorEntrega + valorTamanho;
 
+var tipoDePagamento = undefined;
+
+if(tipoDePagamento == "dinheiro"){
+    let troco = prompt("Você precisará de troco?\n\nS-Sim\nN-Não");
+    var trocoValidado = validarTroco(troco.toLowerCase());
+
+    switch (trocoValidado) {
+        case "s":
+            var pagamento = parseInt(prompt("Você precisará de troco para quanto?"));
+
+            var pagamentoValidado = validarPagamento(pagamento);
+            break;
+    
+        default:
+            break;
+    }
+    var trocoFinal = pagamentoValidado - valorFinal;
+}
+
 var confirmarPedido = prompt("Confirmar pedido? \n[S] \n[N] ").toUpperCase().substr(0, 1);
 
 if (confirmarPedido == "S"){
@@ -100,4 +119,22 @@ if (confirmarPedido == "S"){
 else{
     alert("Pedido cancelado");
     
+}
+
+
+
+function validarTroco(troco){
+    while (troco != 's' && troco != 'n'){
+        alert("Resposta inválida!\n\nPor favor digite uma resposta válida");
+        troco = prompt("Você precisará de troco?\n\nS-Sim\nN-Não");
+    }
+    return troco;
+}
+
+function validarPagamento(pagamento){
+    while(isNaN(pagamento)){
+        alert("Resposta inválida!\n\nPor favor digite uma resposta válida");
+        pagamento = parseInt(prompt("Você precisará de troco para quanto?"));
+    }
+    return pagamento;
 }
