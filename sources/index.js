@@ -1,6 +1,6 @@
 var pedido = {
     tamanho: undefined,
-    borda: valorDaBorda,
+    borda: undefined,
     sabor1: undefined,
     sabor2: undefined,
     bebida: undefined
@@ -17,19 +17,21 @@ var entrega = {
     bairro: undefined,
     referencia: undefined
 }
-const valorDaBorda = {
-    gorgonzola: 10,
-    provolone: 8,
-    catupiry: 5,
-    cheddar: 5,
-    semBorda: 0
-}
 
 switch (pedido.tamanho) {
     case "pequena":
-        var valorTamanho = 20;
+        var valorTamanho = 25;
+        break;
+
+    case "media":
+        var valorTamanho = 30;
+        break;
+
+    case "gigante":
+        var valorTamanho = 40;
         break;
 
     default:
+        var valorTamanho = 45;
         break;
 }
