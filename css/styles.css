@@ -2,6 +2,7 @@ body {
     background-color: #a82c2c;
     text-align: center;
     flex: 1;
+    font-weight: bolder;
 }
 .header {
     padding: 50px;
@@ -9,4 +10,9 @@ body {
     color: white;
     font-size: 30px;
     margin-bottom: 40px;
+ }
+ .formulario {
+    
+    padding: 15px;
+    
  }
