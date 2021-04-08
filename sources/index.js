@@ -88,3 +88,5 @@ switch (entrega.tipo){
         var valorEntrega = 5;
         break;
 }
+
+var valorFinal = valorBebida + valorBorda + valorEntrega + valorTamanho;
