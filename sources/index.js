@@ -57,3 +57,30 @@ switch (pedido.bebida) {
         var valorBebida = 7
         break;
 }
+
+switch (pedido.borda){
+    case "gorgonzola":
+        var valorBorda = 10 ;
+
+    case "provolone":
+        var valorBorda = 8 ;
+
+    case "catupiry" || "cheddar":
+        var valorBorda = 5 ;
+
+    case "sem borda":
+        var valorBorda = 0 ;
+
+    default:
+        break;
+}
+
+switch (entrega.tipo){
+    case "retirada no balcão":
+        var valorEntrega = 0;
+        break;
+    
+    default:
+        var valorEntrega = 5;
+        break;
+}
