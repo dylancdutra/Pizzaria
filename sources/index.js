@@ -36,6 +36,7 @@ switch (pedido.tamanho) {
         break;
 }
 
+
 switch (pedido.bebida) {
     case "coca cola":
         var valorBebida = 12;
@@ -109,8 +110,23 @@ if(tipoDePagamento == "dinheiro"){
     }
     var trocoFinal = pagamentoValidado - valorFinal;
 }
+var dadosDoPedido1 = `Dados do pedido:\n\n\nPIZZA:\n\n Tamanho: ${pedido.tamanho}\n
+Sabor: ${pedido.sabor1}\nBorda: ${pedido.borda}\n\n Bebida: ${pedido.bebida}\n\nPREÇO:${valorFinal}\n`;
 
-var confirmarPedido = prompt("Confirmar pedido? \n[S] \n[N] ").toUpperCase().substr(0, 1);
+var dadosDoPedido2 = `Dados do pedido:\n\n\nPIZZA:\n\n Tamanho: ${pedido.tamanho}\n
+Sabores: ${pedido.sabor1} e ${pedido.sabor2}\nBorda: ${pedido.borda}\n\nBebida: ${pedido.bebida}\n\nPREÇO:${valorFinal}\n`;
+
+var precisaDeTroco = `Troco para ${pagamentoValidado} reais\nValor do troco: ${trocoFinal} reais`
+
+// if(pedido.sabor2 == undefined){
+
+// }
+
+
+
+
+var confirmarPedido = prompt(` 
+Deseja confirmar o pedido? \n[S] \n[N] `).toUpperCase().substr(0, 1);
 
 if (confirmarPedido == "S"){
     alert("Pedido confirmado! \nSeu pedido chegará em até 90 minutos");
