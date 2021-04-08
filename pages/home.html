@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizzaria</title>
-    <script src="../sources/index.js"></script>
     <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <header>
@@ -19,28 +18,27 @@
         <fieldset>
             <legend>Opcoes da pizza</legend>
             <label for="tamanho">Escolha um tamanho: </label>
-            <select id="tamanho" name="tamanho">
-                <option value="pequena">Pequena (20cm - R$25,00)</option>
-                <option value="media">Média (25cm - R$30,00)</option>
-                <option value="grande">Grande (30cm - R$40,00)</option>
-                <option value="gigante">Familia (40cm - R$45,00)</option>
+            <select id="tamanho" name="tamanho" >
+                <option value=25>Pequena (20cm - R$25,00)</option>
+                <option value=30>Média (25cm - R$30,00)</option>
+                <option value=40>Grande (30cm - R$40,00)</option>
+                <option value=45>Familia (40cm - R$45,00)</option>
             </select><br><br>
-
-
+            
 
             <label for="borda">Escolha um tipo de borda: </label>
             <select id="borda" name="borda">
-                <option value="gorgonzola">Gorgonzola (R$10,00)</option>
-                <option value="provolone">Provolone (R$10,00)</option>
-                <option value="catupiry">Catupiry (R$10,00)</option>
-                <option value="cheddar">Cheddar (R$10,00)</option>
-                <option value="semborda">Sem borda (R$0,00)</option>
+                <option value="10">Gorgonzola (R$10,00)</option>
+                <option value="10">Provolone (R$10,00)</option>
+                <option value="10">Catupiry (R$10,00)</option>
+                <option value="10">Cheddar (R$10,00)</option>
+                <option value="0">Sem borda (R$0,00)</option>
             </select><br><br>
 
 
 
-            <label for="sabores">Escolha um sabor: </label>
-            <select id="sabores" name="sabores">
+            <label for="sabor">Escolha um sabor: </label>
+            <select id="sabor" name="sabor">
                 <option value="calabresa">Calabresa (Mussarela, Calabresa e cebola)</option>
                 <option value="quatroqueijos">4 queijos (Mussarela, Cheddar, Parmesão e Prato)</option>
                 <option value="frangocomcatupiry">Frango com Catupiry (Mussarela, Frango e Catupiry)</option>
@@ -56,8 +54,8 @@
 
 
 
-            <label for="sabores">Escolha outro ou nenhum sabor: </label>
-            <select id="sabores" name="sabores">
+            <label for="sabor2">Escolha outro ou nenhum sabor: </label>
+            <select id="sabor2" name="sabor2">
                 <option value="calabresa">Calabresa (Mussarela, Calabresa e cebola)</option>
                 <option value="quatroqueijos">4 queijos (Mussarela, Cheddar, Parmesão e Prato)</option>
                 <option value="frangocomcatupiry">Frango com Catupiry (Mussarela, Frango e Catupiry)</option>
@@ -79,11 +77,11 @@
             <legend>Bebida</legend>
             <label for="bebida">Escolha um tipo de bebida: </label>
             <select id="bebida" name="bebida">
-                <option value="cocacola">Coca Cola (R$12,00)</option>
-                <option value="fanta">Fanta (R$10,00)</option>
-                <option value="guarana">Guaraná Antartica (R$10,00)</option>
-                <option value="h2o">H2O (R$8,00)</option>
-                <option value="del valle">Del Valle (R$7,00)</option>
+                <option value= 12>Coca Cola (R$12,00)</option>
+                <option value= 10>Fanta (R$10,00)</option>
+                <option value= 10>Guaraná Antartica (R$10,00)</option>
+                <option value= 8>H2O (R$8,00)</option>
+                <option value= 7>Del Valle (R$7,00)</option>
             </select>
         </fieldset>
 
@@ -92,8 +90,8 @@
             <legend>Entrega</legend>
             <label for="tipodeentrega">Escolha um tipo de entrega: </label>
             <select id="tipodeentrega" name="tipodeentrega">
-                <option value="retirada">Retirada no Balcão (R$0,00)</option>
-                <option value="delivery">(Delivery - R$5,00)</option>
+                <option value= 0>Retirada no Balcão (R$0,00)</option>
+                <option value= 5>(Delivery - R$5,00)</option>
             </select>
 
             <div>
@@ -142,12 +140,15 @@
             <br>
 
             <label>Precisa de troco</label>
-            <select>
+            <select id="troco">
                 <option value="sim">Sim</option>
                 <option value="nao">Não</option>
             </select>
 
         </fieldset>
+        <input type="button" onclick="pegarTamanho()">
+
+        <script src="../sources/index.js"></script>
 </body>
 
 </html>
