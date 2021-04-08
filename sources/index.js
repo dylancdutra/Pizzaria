@@ -1,5 +1,14 @@
-function pegarTamanho() {
-    let pedido = {
+function mostrarResumo(pedido, cliente) {
+    let nameTam = document.getElementById('tamanho')
+    //nameTam.options[nameTam.selectedIndex].innerHTML
+}
+
+function nomeTamanho(){
+    console.log()
+}
+
+function finalizarPedido() {
+    const pedido = {
         tamanho: parseInt(document.getElementById('tamanho').value),
         borda: parseInt(document.getElementById('borda').value),
         sabor: document.getElementById('sabor').value,
@@ -9,7 +18,36 @@ function pegarTamanho() {
         pagamento: document.getElementById('pagamento').value,
         troco: document.getElementById('troco').value == "sim" ? true : false
     }
-    prompt(`O total do pedido foi : R$ ${pedido.bebida + pedido.tamanho + pedido.borda + pedido.entrega} R$\n Deseja confirmar o pedido? (S/N)` ).toLowerCase().substr(0, 1) === "s" ?
-     alert(`Agradecemos sua preferência senhor(a) ${document.getElementById('nome').value}\nO tempo estimado para entrega é de até 90 minutos.`) : alert("Por favor altere seu pedido")
-    
+    const cliente = {
+        nome: document.getElementById('nome').value,
+        celular: document.getElementById('celular').value,
+        endereco: document.getElementById('endereco').value,
+        numero: document.getElementById('numero').value,
+        complemento: document.getElementById('complemento').value,
+        bairro: document.getElementById('bairro').value
+
+    }
+    document.getElementById("resumo").style.display = 'block'
+    document.getElementById("menu").style.display = 'none'
+    mostrarResumo(pedido, cliente)
 }
+function validarForm() {
+    var optionSelect = document.getElementById("troco").value;
+
+    if (optionSelect == "sim") {
+        document.getElementById("sla").disabled = false;
+    } else if (optionSelect == "nao") {
+        document.getElementById("sla").disabled = true;
+    }
+}
+
+function validarTroco() {
+    var optionSelect = document.getElementById("pagamento").value;
+
+    if (optionSelect == "dinheiro") {
+        document.getElementById("troco").disabled = false;
+    } else {
+        document.getElementById("troco").disabled = true;
+    }
+}
+

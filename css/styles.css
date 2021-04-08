@@ -1,6 +1,6 @@
 h1 {
     text-shadow: 1px 1px black;
-    color: #d30c0c;
+    color: #FFF;
     
  }
 body {
@@ -9,8 +9,8 @@ body {
     flex: 1;
     font-weight: bolder;
     background-image: url("back.jpg");
-    color: #a82c2c;
-    font-size: 20px;
+    color: #FFF;
+    font-size: 25px;
     text-shadow: 2px 1px black;
 }
 header {
@@ -30,4 +30,16 @@ header {
      border-radius: 100px;
      padding: 35px;
      margin-bottom: 20px;
+ }
+
+ .botao {
+     width: 150px;
+     height: 30px;
+     text-align: center;
+     
+ }
+
+ .resumo {
+     display: none;
+     
  }

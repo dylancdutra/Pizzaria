@@ -10,17 +10,18 @@
     <script src="../sources/index.js"></script>
     <link rel="stylesheet" href="../css/styles.css" />
 </head>
+
 <header>
-    <h1>Pizzaria da rapaziada</h1>
+    <h1>Pizzaria</h1>
 </header>
 
 <body>
-
+    <div id="menu">
     <form action="../sources/index.js" method="post" class="formulario">
         <fieldset>
             <legend>Opcoes da pizza</legend>
             <label for="tamanho">Escolha um tamanho: </label>
-            <select id="tamanho" name="tamanho" >
+            <select id="tamanho" name="tamanho" onChange="nomeTamanho(this)">
                 <option value=25>Pequena (20cm - R$25,00)</option>
                 <option value=30>Média (25cm - R$30,00)</option>
                 <option value=40>Grande (30cm - R$40,00)</option>
@@ -36,7 +37,6 @@
                 <option value="10">Cheddar (R$10,00)</option>
                 <option value="0">Sem borda (R$0,00)</option>
             </select><br><br>
-
 
 
             <label for="sabor">Escolha um sabor: </label>
@@ -103,27 +103,27 @@
 
             <div>
                 <label>Celular</label>
-                <input type="text" placeholder="Digite o contato" />
+                <input id="celular" type="text" placeholder="Digite o contato" />
             </div>
 
             <div>
                 <label>Endereço</label>
-                <input type="text" placeholder="Digite a rua" />
+                <input id="endereco" type="text" placeholder="Digite a rua" />
             </div>
 
             <div>
                 <label>Número</label>
-                <input type="text" placeholder="Digite o número" />
+                <input id="numero" type="text" placeholder="Digite o número" />
             </div>
 
             <div>
                 <label>Complemento</label>
-                <input type="text" placeholder="Opcional" />
+                <input id="complemento" type="text" placeholder="Opcional" />
             </div>
 
             <div>
                 <label>Bairro</label>
-                <input type="text" placeholder="Digite o bairro" />
+                <input id="bairro" type="text" placeholder="Digite o bairro" />
             </div>
 
             <div>
@@ -132,7 +132,7 @@
             </div>
 
             <label for="pagamento">Escolha a forma de pagamento: </label>
-            <select id="pagamento" name="pagamento">
+            <select id="pagamento" name="pagamento" onchange= "validarTroco()">
                 <option value="credito">Cartão de crédito</option>
                 <option value="debito">Cartão de débito</option>
                 <option value="pix">Pix</option>
@@ -142,17 +142,21 @@
             <br>
 
             <label>Precisa de troco</label>
-            <select id="troco">
+            <select id="troco" onchange= "validarForm()">
                 <option value="sim">Sim</option>
                 <option value="nao">Não</option>
             </select>
-
+            <input type="text" id = sla placeholder="Troco para quanto?" />
             
 
         </fieldset>
-        <input type="button" onclick="pegarTamanho()">
-
+        <input class="botao" type="button" onclick="finalizarPedido()" value="Finalizar pedido">
+    </div>
         <script src="../sources/index.js"></script>
+    <div class="resumo" id="resumo">
+        <h2>Finalizar Pedido</h2>
+    </div>
 </body>
 
 </html>
+
