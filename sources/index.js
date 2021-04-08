@@ -57,3 +57,13 @@ switch (pedido.bebida) {
         var valorBebida = 7
         break;
 }
+
+switch (entrega.tipo){
+    case "retirada no balcão":
+        var valorEntrega = 0;
+        break;
+    
+    default:
+        var valorEntrega = 5;
+        break;
+}
