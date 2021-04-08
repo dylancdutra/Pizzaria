@@ -9,5 +9,7 @@ function pegarTamanho() {
         pagamento: document.getElementById('pagamento').value,
         troco: document.getElementById('troco').value == "sim" ? true : false
     }
-    alert(`O total do pedido foi : \n ${pedido.bebida + pedido.tamanho + pedido.borda + pedido.entrega}`)
+    prompt(`O total do pedido foi : R$ ${pedido.bebida + pedido.tamanho + pedido.borda + pedido.entrega} R$\n Deseja confirmar o pedido? (S/N)` ).toLowerCase().substr(0, 1) === "s" ?
+     alert(`Agradecemos sua preferência senhor(a) ${document.getElementById('nome').value}\nO tempo estimado para entrega é de até 90 minutos.`) : alert("Por favor altere seu pedido")
+    
 }
