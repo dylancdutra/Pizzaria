@@ -90,13 +90,14 @@ switch (entrega.tipo){
 }
 
 var valorFinal = valorBebida + valorBorda + valorEntrega + valorTamanho;
-var confirmarPedido = prompt("Confirmar pedido? \n[S] \n[N] ").toUpperCase().substr(0, 1)
+
+var confirmarPedido = prompt("Confirmar pedido? \n[S] \n[N] ").toUpperCase().substr(0, 1);
 
 if (confirmarPedido == "S"){
-    document.write("Pedido confirmado! \nSeu pedido chegará em até 90 min")
+    alert("Pedido confirmado! \nSeu pedido chegará em até 90 minutos");
 
 }
 else{
-    document.write("Pedido cancelado")
+    alert("Pedido cancelado");
     
 }
