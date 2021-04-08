@@ -35,3 +35,25 @@ switch (pedido.tamanho) {
         var valorTamanho = 45;
         break;
 }
+
+switch (pedido.bebida) {
+    case "coca cola":
+        var valorBebida = 12;
+        break;
+
+    case "fanta":
+        var valorBebida = 10;
+        break;
+
+    case "guaraná antártica":
+        var valorBebida = 10;
+        break;
+
+    case "h2o":
+        var valorBebida = 8
+        break;
+
+    default:
+        var valorBebida = 7
+        break;
+}
