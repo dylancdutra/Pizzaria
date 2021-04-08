@@ -24,3 +24,12 @@ const valorDaBorda = {
     cheddar: 5,
     semBorda: 0
 }
+
+switch (pedido.tamanho) {
+    case "pequena":
+        var valorTamanho = 20;
+        break;
+
+    default:
+        break;
+}
