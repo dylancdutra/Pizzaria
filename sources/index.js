@@ -17,3 +17,10 @@ var entrega = {
     bairro: undefined,
     referencia: undefined
 }
+const valorDeBorda = {
+    gorgonzola = 10,
+    provolone = 8,
+    catupiry = 5,
+    cheddar = 5,
+    semBorda = 0
+}
