@@ -74,7 +74,7 @@ switch (pedido.borda){
     case "sem borda":
         var valorBorda = 0 ;
         break;
-        
+
     default:
         break;
 }
@@ -90,3 +90,13 @@ switch (entrega.tipo){
 }
 
 var valorFinal = valorBebida + valorBorda + valorEntrega + valorTamanho;
+var confirmarPedido = prompt("Confirmar pedido? \n[S] \n[N] ").toUpperCase().substr(0, 1)
+
+if (confirmarPedido = "S"){
+    document.write("Pedido confirmado! \nSeu pedido chegará em até 90 min")
+
+}
+else{
+    document.write("Pedido cancelado")
+    
+}
