@@ -61,16 +61,20 @@ switch (pedido.bebida) {
 switch (pedido.borda){
     case "gorgonzola":
         var valorBorda = 10 ;
+        break;
 
     case "provolone":
         var valorBorda = 8 ;
+        break;
 
     case "catupiry" || "cheddar":
         var valorBorda = 5 ;
+        break;
 
     case "sem borda":
         var valorBorda = 0 ;
-
+        break;
+        
     default:
         break;
 }
