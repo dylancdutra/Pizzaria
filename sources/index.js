@@ -1,6 +1,7 @@
 function mostrarResumo(pedido, cliente) {
     let nameTam = document.getElementById('tamanho')
-    //nameTam.options[nameTam.selectedIndex].innerHTML
+    //nameTam.options[nameTam.selectedIndex]
+    alert(nameTam.options[nameTam.selectedIndex].innerHTML)
 }
 
 function nomeTamanho(){
