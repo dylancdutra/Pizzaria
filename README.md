@@ -1,2 +1,2 @@
 # Pizzaria
-Participantes: Pedro Henrique
+Participantes: Pedro Henrique, Emanuel Ramos
