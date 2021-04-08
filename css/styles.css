@@ -1,18 +1,33 @@
+h1 {
+    text-shadow: 1px 1px black;
+    color: #d30c0c;
+    
+ }
 body {
     background-color: #a82c2c;
     text-align: center;
     flex: 1;
     font-weight: bolder;
+    background-image: url("back.jpg");
+    color: #a82c2c;
+    font-size: 20px;
+    text-shadow: 2px 1px black;
 }
-.header {
-    padding: 50px;
+header {
+    padding: 10px;
     text-align: center;
     color: white;
     font-size: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
  }
  .formulario {
     
     padding: 15px;
     
+ }
+
+ fieldset {
+     border-radius: 100px;
+     padding: 35px;
+     margin-bottom: 20px;
  }
