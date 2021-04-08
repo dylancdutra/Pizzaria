@@ -1,6 +1,6 @@
 var pedido = {
     tamanho: undefined,
-    borda: undefined,
+    borda: valorDaBorda,
     sabor1: undefined,
     sabor2: undefined,
     bebida: undefined
@@ -17,10 +17,10 @@ var entrega = {
     bairro: undefined,
     referencia: undefined
 }
-const valorDeBorda = {
-    gorgonzola = 10,
-    provolone = 8,
-    catupiry = 5,
-    cheddar = 5,
-    semBorda = 0
+const valorDaBorda = {
+    gorgonzola: 10,
+    provolone: 8,
+    catupiry: 5,
+    cheddar: 5,
+    semBorda: 0
 }
