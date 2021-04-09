@@ -139,6 +139,7 @@
             
             <label for="pagamento">Escolha a forma de pagamento: </label>
             <select id="pagamento" name="pagamento" onchange= "validarTroco()">
+                <option value= null>Selecione</option>
                 <option value="dinheiro">Dinheiro</option>
                 <option value="credito">Cartão de crédito</option>
                 <option value="debito">Cartão de débito</option>
@@ -149,6 +150,7 @@
 
             <label>Precisa de troco</label>
             <select id="troco" onchange= "validarForm()">
+                <option value= null>Selecione</option>
                 <option value="sim">Sim</option>
                 <option value="nao">Não</option>
             </select>
