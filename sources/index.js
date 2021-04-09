@@ -1,12 +1,63 @@
-function mostrarResumo(pedido, cliente) {
-    let nameTam = document.getElementById('tamanho')
-    //nameTam.options[nameTam.selectedIndex]
-    alert(nameTam.options[nameTam.selectedIndex].innerHTML)
+function fecharPedido() {
+    //Mostrar que o pedido foi efetuado com sucesso e o codigo do pedido.
+    document.getElementById("botoes").style.display = 'none';
+    document.getElementById("resumo").style.display = 'none';
+
+    let divNota = document.createElement("div");
+    divNota.id = "nota";
+    let agradecimentos = document.createTextNode(`Agradecemos sua preferência senhor(a) ${document.getElementById('nome').value}.
+                                                 O codigo do seu pedido é: ${Math.floor(Math.random() * 150)}.
+                                                 O tempo estimado para entrega é de até 90 minutos.`)
+    
+    divNota.appendChild(agradecimentos)
+    let divMenu = document.getElementById("menu")
+    document.body.insertBefore(divNota, divMenu)
 }
 
-function nomeTamanho(){
-    console.log()
+function fazerAlteracao() {
+    //apagar o outro pedido
+    let pedidoAntigo = document.getElementById("resumo");
+    pedidoAntigo.parentNode.removeChild(pedidoAntigo);
+
+    //esconder pedido e aparecer o menu
+    document.getElementById("botoes").style.display = 'none'
+    document.getElementById("menu").style.display = 'block'
+
 }
+
+function mostrarResumo(pedido) {
+    //Guardar o texto de cada input, o .value traz o custo e nao a opcao
+    let nameTam = document.getElementById('tamanho')
+    let nameBorda = document.getElementById('borda')
+    let nameBebida = document.getElementById('bebida')
+    let nameEntrega = document.getElementById('tipodeentrega')
+    let escolhas = [
+        nameTam.options[nameTam.selectedIndex].innerHTML,
+        nameBorda.options[nameBorda.selectedIndex].innerHTML,
+        document.getElementById('sabor').value,
+        document.getElementById('sabor2').value,
+        nameBebida.options[nameBebida.selectedIndex].innerHTML,
+        nameEntrega.options[nameEntrega.selectedIndex].innerHTML,
+        `Para o endereço: ${document.getElementById('endereco').value}
+         nº  ${document.getElementById('numero').value}
+         ${document.getElementById('bairro').value}`
+    ]
+
+    //Criacao da div resumo para o cliente confirmar o pedido
+    let divResumo = document.createElement("div")
+    divResumo.id = "resumo"
+    for (i in escolhas) {
+        let conteudoNovo = document.createTextNode(escolhas[i])
+        divResumo.appendChild(conteudoNovo);
+        divResumo.appendChild(document.createElement("br"))
+        divResumo.appendChild(document.createElement("br"))
+    }
+    let total = document.createTextNode(`Total do pedido: R$ ${pedido.tamanho + pedido.borda + pedido.bebida + pedido.entrega}`)
+    divResumo.appendChild(total);
+    let divMenu = document.getElementById("menu");
+    document.body.insertBefore(divResumo, divMenu);
+}
+
 
 function finalizarPedido() {
     const pedido = {
@@ -28,10 +79,18 @@ function finalizarPedido() {
         bairro: document.getElementById('bairro').value
 
     }
-    document.getElementById("resumo").style.display = 'block'
+
+    for (val in pedido) {
+        if (pedido[val].toString() == "null" || pedido[val].toString() == "NaN") {
+            return alert('Voce nao selecionou todas as opcoes')
+        }
+    }
+
+    document.getElementById("botoes").style.display = 'block'
     document.getElementById("menu").style.display = 'none'
     mostrarResumo(pedido, cliente)
 }
+
 function validarForm() {
     var optionSelect = document.getElementById("troco").value;
 
