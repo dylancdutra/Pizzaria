@@ -37,6 +37,7 @@ function mostrarResumo(pedido) {
         nameBorda.options[nameBorda.selectedIndex].innerHTML,
         document.getElementById('sabor').value,
         document.getElementById('sabor2').value,
+        document.getElementById('comentario').value,
         nameBebida.options[nameBebida.selectedIndex].innerHTML,
         nameEntrega.options[nameEntrega.selectedIndex].innerHTML
     ]
@@ -67,7 +68,8 @@ function finalizarPedido() {
         entrega: parseInt(document.getElementById('tipodeentrega').value),
         pagamento: document.getElementById('pagamento').value,
         nome: document.getElementById('nome').value,
-        troco: document.getElementById('troco').value == "sim" ? true : false
+        troco: document.getElementById('troco').value == "sim" ? true : false,
+        comentario: document.getElementById('comentario').value
     }
     const entrega = {
         celular: document.getElementById('celular').value,
