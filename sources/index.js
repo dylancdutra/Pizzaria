@@ -85,16 +85,16 @@ function finalizarPedido() {
 
     for (val in pedido) {
         if (pedido[val].toString() == "null" || pedido[val].toString() == "NaN") {
-            return alert('Voce nao selecionou todas as opcoes')
+            return alert('Você não selecionou todas as opcôes')
         }
     }
 
-    if (pedido.nome == "") { return alert('Voce nao preencheu seu nome corretamente') }
+    if (pedido.nome == "") { return alert('Você não preencheu seu nome corretamente') }
 
     if (document.getElementById("tipodeentrega").value == 5) {
         for (val in entrega) {
             if (entrega[val] == "") {
-                return alert('Voce nao preencheu o endereco corretamente')
+                return alert('Você não preencheu o endereço corretamente')
             }
         }
     }
