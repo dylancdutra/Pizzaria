@@ -90,7 +90,6 @@ function finalizarPedido() {
             return alert('Você não selecionou todas as opcôes')
         }
     }
-
     if (pedido.nome == "") { return alert('Você não preencheu seu nome corretamente') }
 
     if (document.getElementById("tipodeentrega").value == 5) {
@@ -123,8 +122,10 @@ function validarTroco() {
 
     if (optionSelect == "dinheiro") {
         document.getElementById("inputTroco").disabled = false;
+        document.getElementById("troco").disabled = false;
     } else {
         document.getElementById("inputTroco").disabled = true;
+        document.getElementById("troco").disabled = true;
     }
 }
 
