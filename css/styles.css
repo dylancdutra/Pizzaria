@@ -39,11 +39,9 @@ header {
      
  }
 
- .resumo {
-     display: none;
-     
- }
- .botoes {
+ 
+ #botoes {
     display: none;
     
 }
+
