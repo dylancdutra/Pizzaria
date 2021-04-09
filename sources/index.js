@@ -11,8 +11,7 @@ function fecharPedido() {
                                                  O tempo estimado para entrega é de até 90 minutos.`)
 
     divNota.appendChild(agradecimentos)
-    let divMenu = document.getElementById("menu")
-    document.body.insertBefore(divNota, divMenu)
+    document.body.insertBefore(divNota, document.getElementById("menu"))
 }
 
 
@@ -52,9 +51,8 @@ function mostrarResumo(pedido) {
         divResumo.appendChild(document.createElement("br"))
     }
     let total = document.createTextNode(`Total do pedido: R$ ${pedido.tamanho + pedido.borda + pedido.bebida + pedido.entrega}`)
-    divResumo.appendChild(total);
-    let divMenu = document.getElementById("menu");
-    document.body.insertBefore(divResumo, divMenu);
+    divResumo.appendChild(total);    
+    document.body.insertBefore(divResumo, document.getElementById("menu"));
 }
 
 
@@ -105,6 +103,7 @@ function finalizarPedido() {
     mostrarResumo(pedido)
 }
 
+//Aparecer/Desaparecer input de quantidade de troco 
 function validarForm() {
     var optionSelect = document.getElementById("troco").value;
 
@@ -125,6 +124,8 @@ function validarTroco() {
     }
 }
 
+
+//Ativar/Desativar a div de formulario de delivery
 function ativarEntrega() {
     if (document.getElementById("tipodeentrega").value == 5) {
         document.getElementById("dadosEntrega").style.display = 'block'
