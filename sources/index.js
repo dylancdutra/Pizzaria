@@ -46,13 +46,15 @@ function mostrarResumo(pedido) {
     let divResumo = document.createElement("div")
     divResumo.id = "resumo"
     for (i in escolhas) {
-        let conteudoNovo = document.createTextNode(escolhas[i])
-        divResumo.appendChild(conteudoNovo);
-        divResumo.appendChild(document.createElement("br"))
-        divResumo.appendChild(document.createElement("br"))
+        if (escolhas[i].toString() != "") {
+            let conteudoNovo = document.createTextNode(escolhas[i])      
+            divResumo.appendChild(conteudoNovo);
+            divResumo.appendChild(document.createElement("br"))
+            divResumo.appendChild(document.createElement("br"))
+        }
     }
     let total = document.createTextNode(`Total do pedido: R$ ${pedido.tamanho + pedido.borda + pedido.bebida + pedido.entrega}`)
-    divResumo.appendChild(total);    
+    divResumo.appendChild(total);
     document.body.insertBefore(divResumo, document.getElementById("menu"));
 }
 
