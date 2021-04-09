@@ -79,7 +79,8 @@ function finalizarPedido() {
         endereco: document.getElementById('endereco').value,
         numero: document.getElementById('numero').value,
         complemento: document.getElementById('complemento').value,
-        bairro: document.getElementById('bairro').value
+        bairro: document.getElementById('bairro').value,
+        referencia: document.getElementById('referencia').value
 
     }
 
