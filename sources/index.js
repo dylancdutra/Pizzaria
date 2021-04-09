@@ -77,9 +77,9 @@ function finalizarPedido() {
         celular: document.getElementById('celular').value,
         endereco: document.getElementById('endereco').value,
         numero: document.getElementById('numero').value,
-        complemento: document.getElementById('complemento').value,
+        complemento: document.getElementById('complemento').value == "" ? "Nenhum complemento fornecido" : document.getElementById('complemento').value,
         bairro: document.getElementById('bairro').value,
-        referencia: document.getElementById('referencia').value
+        referencia: document.getElementById('referencia').value == "" ? "Nenhuma referencia" : document.getElementById('referencia').value
 
     }
 
