@@ -1,5 +1,6 @@
+//Mostrar que o pedido foi efetuado com sucesso e o codigo do pedido.
 function fecharPedido() {
-    //Mostrar que o pedido foi efetuado com sucesso e o codigo do pedido.
+    
     document.getElementById("botoes").style.display = 'none';
     document.getElementById("resumo").style.display = 'none';
 
@@ -13,6 +14,7 @@ function fecharPedido() {
     let divMenu = document.getElementById("menu")
     document.body.insertBefore(divNota, divMenu)
 }
+
 
 function fazerAlteracao() {
     //apagar o outro pedido
@@ -60,6 +62,7 @@ function mostrarResumo(pedido) {
 
 
 function finalizarPedido() {
+    //armazenar dados que o cliente passar em objetos
     const pedido = {
         tamanho: parseInt(document.getElementById('tamanho').value),
         borda: parseInt(document.getElementById('borda').value),
@@ -80,12 +83,15 @@ function finalizarPedido() {
 
     }
 
+    //validar se o formulario foi completado
+    
     for (val in pedido) {
         if (pedido[val].toString() == "null" || pedido[val].toString() == "NaN") {
             return alert('Voce nao selecionou todas as opcoes')
         }
     }
 
+    //trocar as divs
     document.getElementById("botoes").style.display = 'block'
     document.getElementById("menu").style.display = 'none'
     mostrarResumo(pedido, cliente)
@@ -95,9 +101,9 @@ function validarForm() {
     var optionSelect = document.getElementById("troco").value;
 
     if (optionSelect == "sim") {
-        document.getElementById("sla").disabled = false;
+        document.getElementById("inputTroco").disabled = false;
     } else if (optionSelect == "nao") {
-        document.getElementById("sla").disabled = true;
+        document.getElementById("inputTroco").disabled = true;
     }
 }
 
@@ -105,9 +111,9 @@ function validarTroco() {
     var optionSelect = document.getElementById("pagamento").value;
 
     if (optionSelect == "dinheiro") {
-        document.getElementById("troco").disabled = false;
+        document.getElementById("inputTroco").disabled = false;
     } else {
-        document.getElementById("troco").disabled = true;
+        document.getElementById("inputTroco").disabled = true;
     }
 }
 
