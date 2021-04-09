@@ -89,6 +89,7 @@
                 <option value= 10>Guaraná Antartica (R$10,00)</option>
                 <option value= 8>H2O (R$8,00)</option>
                 <option value= 7>Del Valle (R$7,00)</option>
+                <option value= 0>Nada para beber</option>
             </select>
         </fieldset>
 
@@ -96,47 +97,46 @@
         <fieldset>
             <legend>Entrega</legend>
             <label for="tipodeentrega">Escolha um tipo de entrega: </label>
-            <select id="tipodeentrega" name="tipodeentrega">
+            <select id="tipodeentrega" name="tipodeentrega" onchange="ativarEntrega()">
                 <option value= null>Selecione</option>
                 <option value= 0>Retirada no Balcão (R$0,00)</option>
                 <option value= 5>(Delivery - R$5,00)</option>
             </select>
-
-            <div>
-                <label>Nome:</label>
+            <br>
+            <label>Nome:</label>
                 <input id= "nome" type="text" placeholder="Digite o nome*" required/>
-            </div>
-
-            <div>
+                <br>
+            <div id=dadosEntrega>
+                
                 <label>Celular</label>
                 <input id="celular" type="text" placeholder="Digite o telefone*" required/>
-            </div>
+                <br>
 
-            <div>
+           
                 <label>Endereço</label>
                 <input id="endereco" type="text" placeholder="Digite a rua*" required/>
-            </div>
+                <br>
 
-            <div>
+            
                 <label>Número</label>
                 <input id="numero" type="text" placeholder="Digite o número*" required/>
-            </div>
+                <br>
 
-            <div>
+            
                 <label>Complemento</label>
-                <input id="complemento" type="text" placeholder="Opcional" />
-            </div>
+                <input id="complemento" type="text" value="Opcional" />
+                <br>
 
-            <div>
+            
                 <label>Bairro</label>
                 <input id="bairro" type="text" placeholder="Digite o bairro*" required/>
-            </div>
+                <br>
 
-            <div>
+            
                 <label>Ponto de referência</label><br>
-                <textarea id="referencia" name="mensagem" required></textarea>
+                <input id="referencia" name="mensagem" value="Opcional"></input>
             </div>
-
+            
             <label for="pagamento">Escolha a forma de pagamento: </label>
             <select id="pagamento" name="pagamento" onchange= "validarTroco()">
                 <option value="dinheiro">Dinheiro</option>

@@ -1,6 +1,6 @@
 //Mostrar que o pedido foi efetuado com sucesso e o codigo do pedido.
 function fecharPedido() {
-    
+
     document.getElementById("botoes").style.display = 'none';
     document.getElementById("resumo").style.display = 'none';
 
@@ -9,7 +9,7 @@ function fecharPedido() {
     let agradecimentos = document.createTextNode(`Agradecemos sua preferência senhor(a) ${document.getElementById('nome').value}.
                                                  O codigo do seu pedido é: ${Math.floor(Math.random() * 150)}.
                                                  O tempo estimado para entrega é de até 90 minutos.`)
-    
+
     divNota.appendChild(agradecimentos)
     let divMenu = document.getElementById("menu")
     document.body.insertBefore(divNota, divMenu)
@@ -39,10 +39,7 @@ function mostrarResumo(pedido) {
         document.getElementById('sabor').value,
         document.getElementById('sabor2').value,
         nameBebida.options[nameBebida.selectedIndex].innerHTML,
-        nameEntrega.options[nameEntrega.selectedIndex].innerHTML,
-        `Para o endereço: ${document.getElementById('endereco').value}
-         nº  ${document.getElementById('numero').value}
-         ${document.getElementById('bairro').value}`
+        nameEntrega.options[nameEntrega.selectedIndex].innerHTML
     ]
 
     //Criacao da div resumo para o cliente confirmar o pedido
@@ -71,10 +68,10 @@ function finalizarPedido() {
         bebida: parseInt(document.getElementById('bebida').value),
         entrega: parseInt(document.getElementById('tipodeentrega').value),
         pagamento: document.getElementById('pagamento').value,
+        nome: document.getElementById('nome').value,
         troco: document.getElementById('troco').value == "sim" ? true : false
     }
-    const cliente = {
-        nome: document.getElementById('nome').value,
+    const entrega = {
         celular: document.getElementById('celular').value,
         endereco: document.getElementById('endereco').value,
         numero: document.getElementById('numero').value,
@@ -85,17 +82,27 @@ function finalizarPedido() {
     }
 
     //validar se o formulario foi completado
-    
+
     for (val in pedido) {
         if (pedido[val].toString() == "null" || pedido[val].toString() == "NaN") {
             return alert('Voce nao selecionou todas as opcoes')
         }
     }
 
+    if (pedido.nome == "") { return alert('Voce nao preencheu seu nome corretamente') }
+
+    if (document.getElementById("tipodeentrega").value == 5) {
+        for (val in entrega) {
+            if (entrega[val] == "") {
+                return alert('Voce nao preencheu o endereco corretamente')
+            }
+        }
+    }
+
     //trocar as divs
     document.getElementById("botoes").style.display = 'block'
     document.getElementById("menu").style.display = 'none'
-    mostrarResumo(pedido, cliente)
+    mostrarResumo(pedido)
 }
 
 function validarForm() {
@@ -118,3 +125,10 @@ function validarTroco() {
     }
 }
 
+function ativarEntrega() {
+    if (document.getElementById("tipodeentrega").value == 5) {
+        document.getElementById("dadosEntrega").style.display = 'block'
+    } else {
+        document.getElementById("dadosEntrega").style.display = 'none'
+    }
+}
